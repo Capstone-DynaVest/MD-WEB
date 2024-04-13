@@ -11,9 +11,10 @@ import Footer from './component/Footer'
   return (
      <>
      
-     <Navbar/>
+   <Navbar />
      <Fetch />
      <Footer />
+    
      
      
      </>

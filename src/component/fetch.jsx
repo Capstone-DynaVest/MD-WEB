@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
-
 const Input = styled.input`
   border-radius: 10px;
   padding: 10px;
@@ -15,9 +13,6 @@ const Input = styled.input`
     color: white;
   }
 `;
-
-
-
 
 
 async function fetchData(param, offset) {
@@ -55,13 +50,16 @@ function getData  ()  {
   };
 
   return (
-    <div>
+   
+    <div className =' w-full flex flex-col items-center'>
       <Input className='hover:cursor-pointer hover:bg-green-500 hover:text-white'
         type="text"
         value={searchQuery}
         onChange={(event) => setSearchquery(event.target.value)}
         placeholder="enter name food"
       />
+      <button className='bg-green-800 rounded px-5 py-2 mt-5 hover:bg-green-500 text-white'>Search</button>
+      
       {foodData ? (
         <div>
           <ul className="flex flex-wrap gap-10 mt-5">
@@ -73,7 +71,7 @@ function getData  ()  {
               </li>
             ))}
           </ul>
-          <button className='bg-green-800 rounded px-5 py-2 mt-5 hover:bg-green-500 text-white' onClick={handleRefreshFood}>Refresh food</button>
+          <button className='bg-green-800 rounded px-5 py-2 mt-6 hover:bg-green-500 text-white' onClick={handleRefreshFood}>Refresh food</button>
         </div>
       ) : (
         <p>Loading...</p>
